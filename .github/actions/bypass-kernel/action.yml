@@ -16,7 +16,7 @@ runs:
   using: composite
   steps:
     - name: Activate Bypass
-      if: ${{ inputs.allow_version_mismatch == 'true' }}
+      if: ${{ inputs.allow_version_mismatch == true || inputs.allow_version_mismatch == 'true' }}
       shell: bash
       working-directory: ${{ github.workspace }}/kernel
       run: |
